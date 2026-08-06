@@ -1,0 +1,2550 @@
+/*
+============================================================
+CSS_VARIAVEIS_GERAIS — SELETOR: :root
+============================================================
+O QUE É: central de valores reutilizados em toda a página.
+ONDE APARECE: cores, tipografia, larguras, espaçamentos, bordas e animações.
+O QUE CONTROLA: --color-* define a paleta; --font-sans define a fonte;
+--max-width limita o conteúdo; --header-height define o cabeçalho;
+--section-space regula a distância vertical; --radius-* arredonda elementos;
+--shadow-soft cria sombra e --transition define a velocidade padrão.
+COMO ALTERAR: modifique somente o valor após os dois-pontos. Por exemplo,
+reduzir --section-space aproxima as seções; aumentar --max-width alarga o site.
+CUIDADOS: uma variável pode afetar muitos seletores. Preserve contraste,
+responsividade e a paleta oficial ao alterar cores.
+DEPENDÊNCIAS: todos os usos de var(--nome-da-variavel) no arquivo.
+============================================================
+*/
+:root {
+  --color-orange: #ff6c01;
+  --color-yellow: #fec438;
+  --color-violet: #4215ff;
+  --color-blue: #19087f;
+  --color-white: #ffffff;
+  --color-neutral-50: #faf9f7;
+  --color-neutral-100: #f3f1ed;
+  --color-neutral-200: #e7e3dc;
+  --color-neutral-500: rgba(25, 8, 127, 0.68);
+  --color-text: var(--color-blue);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --max-width: 1180px;
+  /*
+  AJUSTES DO CABEÇALHO
+
+  --header-height:
+  Altera somente a espessura do menu.
+
+  --header-logo-size:
+  Altera somente o tamanho de “João Felipe”.
+
+  --header-link-size:
+  Altera somente o tamanho dos links.
+
+  --header-instagram-size:
+  Altera somente o tamanho do link Instagram.
+  */
+  --header-height: 4rem;
+  --header-logo-size: 1.25rem;
+  --header-link-size: 0.78rem;
+  --header-instagram-size: 0.78rem;
+  --header-horizontal-padding: 1.25rem;
+  /*
+  AJUSTES DA SEÇÃO QUEM É JOÃO
+
+  --about-text-position-y:
+  Controla a posição vertical do texto.
+  Exemplo:
+  -3rem sobe mais.
+  -1rem sobe menos.
+  0 mantém a posição original.
+
+  --about-video-height:
+  Controla o tamanho do vídeo no desktop.
+  Exemplo:
+  38rem aumenta.
+  34rem diminui.
+  */
+  --about-text-position-y: -5rem;
+  --about-video-height: 36rem;
+  --journey-padding-top: 0.5rem;
+  --journey-padding-bottom: 1rem;
+  --journey-title-size: clamp(3.5rem, 5vw, 5.5rem);
+  --journey-intro-size: clamp(1rem, 1.15vw, 1.15rem);
+  --journey-intro-extra-size: 1px;
+  --journey-title-intro-gap: 1rem;
+  --journey-intro-timeline-gap: 1rem;
+  --journey-bottom-space: 1rem;
+  --journey-heading-gap: clamp(2.5rem, 7vh, 4rem);
+  --journey-card-title-size: 1.65rem;
+  --journey-card-text-size: 0.9rem;
+  /*
+  ============================================================
+  AJUSTES DO CABEÇALHO — QUATRO PILARES
+  ============================================================
+
+  --pillars-header-padding-top:
+  Controla a distância entre o começo da seção e “Quatro pilares”.
+  Valor menor sobe todo o conjunto.
+  Exemplo: 0.5rem sobe mais.
+
+  --pillars-header-gap:
+  Controla a distância horizontal entre o título e a coluna direita.
+
+  --pillars-symbol-box-size:
+  Controla o tamanho da área ocupada por cada símbolo.
+  Exemplo: 5rem aumenta cada bloco.
+
+  --pillars-symbol-size:
+  Controla somente o desenho interno dos símbolos.
+
+  --pillars-symbol-gap:
+  Controla a distância entre um símbolo e outro.
+
+  --pillars-symbols-text-gap:
+  Controla a distância vertical entre os símbolos e o texto lateral.
+  ============================================================
+  */
+  --pillars-header-padding-top: 3rem;
+  --pillars-header-gap: 3rem;
+  --pillars-symbol-box-size: 4.5rem;
+  --pillars-symbol-size: 2.4rem;
+  --pillars-symbol-gap: 1.5rem;
+  --pillars-symbols-text-gap: 1.5rem;
+  /*
+  ============================================================
+  AJUSTES DOS QUATRO SÍMBOLOS — SEÇÃO PILARES
+  ============================================================
+
+  --pillars-icons-position-y:
+  Controla a posição vertical do conjunto.
+  Valor negativo sobe os símbolos.
+  Exemplo:
+  -2rem sobe mais.
+  -0.5rem sobe menos.
+  0 mantém a posição original.
+
+  --pillars-icons-gap:
+  Controla a distância entre um símbolo e outro.
+
+  --pillars-icon-box-size:
+  Controla o tamanho de cada quadrado.
+
+  --pillars-icon-radius:
+  Controla o arredondamento dos quadrados.
+  ============================================================
+  */
+  --pillars-icons-position-y: -1rem;
+  --pillars-icons-gap: 1rem;
+  --pillars-icon-box-size: 4.5rem;
+  --pillars-icon-radius: 0.6rem;
+  /*
+  ============================================================
+  LARGURA DOS CARDS — QUATRO PILARES
+  ============================================================
+
+  --pillars-container-width:
+  Controla a largura total ocupada pelos quatro cards.
+  Valor maior deixa os cards mais largos.
+  Exemplo: 84rem aumenta a largura total.
+
+  --pillars-cards-gap:
+  Controla a distância entre um card e outro.
+  Valor menor deixa mais largura disponível para cada card.
+
+  --pillar-card-padding-x:
+  Controla o espaço interno esquerdo e direito.
+  Valor maior reduz a área disponível para o texto.
+  Não aumentar excessivamente.
+  ============================================================
+  */
+  --pillars-container-width: 80rem;
+  --pillars-cards-gap: 0.75rem;
+  --pillar-card-padding-x: 1.25rem;
+  --pillars-section-padding-bottom: 2rem;
+  --gallery-section-padding-top: 2rem;
+  /*
+  ============================================================
+  AJUSTES DA GALERIA E DO FEED AUTOMÁTICO
+  ============================================================
+
+  --gallery-layout-gap:
+  Controla a distância entre os blocos da galeria.
+
+  --instagram-feed-gap:
+  Controla a distância entre as publicações.
+
+  --instagram-card-width:
+  Controla a largura de cada publicação.
+
+  INSTAGRAM_AUTOPLAY_DELAY no main.js:
+  Controla o tempo entre uma publicação e outra.
+  3500 significa 3,5 segundos.
+
+  Para alterar a posição dos blocos, procurar:
+  GALERIA_LAYOUT_DESKTOP
+
+  Para alterar o movimento automático, procurar:
+  JS_INSTAGRAM_AUTOPLAY
+  ============================================================
+  */
+  --gallery-layout-gap: 0.75rem;
+  --instagram-feed-gap: 0.5rem;
+  --instagram-card-width: 14rem;
+  --gallery-feature-row-height: 16.8rem;
+  --section-space: clamp(5rem, 10vw, 9rem);
+  --radius-small: 0.5rem;
+  --radius-medium: 1rem;
+  --radius-large: 1.75rem;
+  --shadow-soft: 0 1.5rem 4rem rgba(25, 8, 127, 0.1);
+  --transition: 220ms ease;
+}
+
+/*
+============================================================
+CSS_RESET_GERAL — SELETORES: *, html, body, títulos, links e botões
+============================================================
+O QUE É: normalização básica que torna o layout previsível nos navegadores.
+ONDE APARECE: em toda a landing page.
+O QUE CONTROLA: box-sizing inclui bordas nas dimensões; html ativa rolagem
+suave; body define fonte, cores e impede rolagem horizontal; títulos recebem
+altura de linha; links perdem sublinhado e botões herdam a fonte.
+COMO ALTERAR: ajuste line-height para leitura, min-width para a menor tela e
+scroll-padding-top quando a altura do cabeçalho mudar.
+CUIDADOS: remover box-sizing ou overflow-x pode quebrar larguras. menu-open é
+adicionada pelo JavaScript para bloquear a página com o menu aberto.
+DEPENDÊNCIAS: --header-height, --font-sans, --color-text e JS_MENU_MOBILE.
+============================================================
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 1rem);
+}
+
+body {
+  margin: 0;
+  min-width: 20rem;
+  overflow-x: hidden;
+  color: var(--color-text);
+  background: var(--color-neutral-50);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+/*
+============================================================
+CSS_ACESSIBILIDADE — SELETORES: :focus-visible e .skip-link
+============================================================
+O QUE É: foco visível para teclado e atalho para pular ao conteúdo principal.
+ONDE APARECE: links, botões e no primeiro link oculto da página.
+O QUE CONTROLA: outline define cor e espessura do foco; transform esconde ou
+mostra o skip-link quando ele recebe foco.
+COMO ALTERAR: ajuste outline-offset para afastar o contorno e padding para
+aumentar a área do atalho.
+CUIDADOS: não remova o foco visível; ele é essencial para acessibilidade.
+DEPENDÊNCIAS: --color-yellow, --color-white e --transition.
+============================================================
+*/
+:focus-visible {
+  outline: 0.2rem solid var(--color-yellow);
+  outline-offset: 0.25rem;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1000;
+  padding: 0.7rem 1rem;
+  color: var(--color-blue);
+  background: var(--color-white);
+  border-radius: var(--radius-small);
+  font-weight: 700;
+  transform: translateY(-160%);
+  transition: transform var(--transition);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/*
+============================================================
+CSS_CONTAINER — SELETORES: .container e .section
+============================================================
+O QUE É: estrutura comum de largura e espaçamento das seções.
+ONDE APARECE: cabeçalho, hero, conteúdo, Instagram e rodapé.
+O QUE CONTROLA: width limita a largura com respiro lateral; margin centraliza;
+padding-block define a distância vertical entre seções.
+COMO ALTERAR: use --max-width para a largura geral e --section-space para o
+espaçamento. O cálculo atual mantém margens em telas pequenas.
+CUIDADOS: revise todas as grades e media queries se mudar a largura máxima.
+DEPENDÊNCIAS: :root e as regras responsivas de 42rem.
+============================================================
+*/
+.container {
+  width: min(calc(100% - 2rem), var(--max-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-space);
+}
+
+/*
+============================================================
+CSS_CABECALHO — SELETORES: .site-header, .header-inner e .signature
+============================================================
+O QUE É: cabeçalho fixo com assinatura textual de João Felipe.
+ONDE APARECE: no topo da página durante toda a navegação.
+O QUE CONTROLA: position fixa o cabeçalho; height define sua altura;
+background e backdrop-filter criam o fundo translúcido; z-index o mantém acima.
+COMO ALTERAR: ajuste --header-height para altura, background para transparência
+e gap/alinhamentos no .header-inner para distribuição interna.
+CUIDADOS: preserve z-index acima do menu e atualize scroll-padding se alterar
+a altura. Não há classe .is-scrolled implementada atualmente.
+DEPENDÊNCIAS: --header-height, .main-navigation, .menu-toggle e .hero.
+============================================================
+*/
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  height: var(--header-height);
+  color: var(--color-white);
+  background: rgba(25, 8, 127, 0.94);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(1rem);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding-inline: var(--header-horizontal-padding);
+}
+
+.signature,
+.footer-signature {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.signature {
+  position: relative;
+  z-index: 102;
+  font-size: var(--header-logo-size);
+  line-height: 1;
+}
+
+.signature::after {
+  content: "";
+  display: inline-block;
+  width: 0.35rem;
+  height: 0.35rem;
+  margin-left: 0.2rem;
+  background: var(--color-orange);
+  border-radius: 50%;
+}
+
+/*
+============================================================
+CSS_MENU_MOBILE — SELETORES: .menu-toggle, .main-navigation e .is-open
+============================================================
+O QUE É: botão circular e painel de navegação para celular.
+ONDE APARECE: cabeçalho em telas abaixo de 64rem.
+O QUE CONTROLA: linhas do ícone, fundo do painel, direção flex, visibilidade,
+opacidade e transições de abertura. aria-expanded=true transforma o ícone em X.
+COMO ALTERAR: width/height mudam o botão; gap altera as linhas; padding muda o
+respiro do painel; transition controla a velocidade.
+CUIDADOS: .is-open, aria-expanded e body.menu-open são controlados pelo main.js;
+não renomeie essas referências sem atualizar JS e HTML.
+DEPENDÊNCIAS: JS_MENU_MOBILE e media query de 64rem.
+============================================================
+*/
+.menu-toggle {
+  position: relative;
+  z-index: 102;
+  display: grid;
+  place-content: center;
+  gap: 0.32rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  color: var(--color-white);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.menu-toggle-line {
+  display: block;
+  width: 1.15rem;
+  height: 0.1rem;
+  background: currentColor;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-line:nth-child(1) {
+  transform: translateY(0.42rem) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-line:nth-child(3) {
+  transform: translateY(-0.42rem) rotate(-45deg);
+}
+
+.main-navigation {
+  position: fixed;
+  inset: 0;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 6rem 2rem 3rem;
+  background: var(--color-blue);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-1rem);
+  transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+}
+
+.main-navigation.is-open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navigation-list {
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation-list a {
+  display: block;
+  padding-block: 0.45rem;
+  font-size: var(--header-link-size);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.header-instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
+  color: #fff;
+  background: #ff6c01;
+  border: 1px solid #ff6c01;
+  border-radius: 999px;
+  font-size: var(--header-instagram-size);
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: none;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.header-instagram span {
+  color: inherit;
+}
+
+.header-instagram:hover,
+.header-instagram:focus-visible {
+  color: #ff6c01;
+  background: #fff;
+  border-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+
+/*
+============================================================
+CSS_HERO — SELETORES: .hero, .hero-grid e .hero-copy
+============================================================
+O QUE É: primeira tela institucional e suas camadas de conteúdo.
+ONDE APARECE: seção #inicio.
+O QUE CONTROLA: min-height garante a altura da viewport; padding reserva espaço
+para o cabeçalho; isolation e z-index organizam foto, decoração e textos;
+.hero-grid posiciona o conteúdo e .hero-copy limita sua largura.
+COMO ALTERAR: min-height muda a altura; padding altera respiros; max-width da
+cópia muda a largura do texto; gap controla distância entre itens da grade.
+CUIDADOS: mantenha position: relative, isolation e overflow para não misturar
+as camadas do hero com outras seções.
+DEPENDÊNCIAS: CSS_HERO_BACKGROUND, .hero-orbit, .hero-footer e media queries.
+============================================================
+*/
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  padding: calc(var(--header-height) + 3rem) 0 5.5rem;
+  overflow: hidden;
+  color: var(--color-white);
+  background: var(--color-blue);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 35% -25% auto auto;
+  width: 27rem;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/*
+============================================================
+CSS_HERO_BACKGROUND — FOTO, OVERLAY E ESTADOS
+============================================================
+O QUE É: fotografia de fundo em tela inteira e camada escura de leitura.
+ONDE APARECE: atrás dos textos do hero.
+O QUE CONTROLA: inset/width/height ocupam toda a seção; object-fit cobre a área;
+object-position move o enquadramento; o gradiente escurece o fundo; transform e
+transition criam uma aproximação discreta quando .is-image-loaded é adicionada.
+COMO ALTERAR: ajuste object-position (ex.: 50% center move para o centro);
+altere os valores rgba do gradiente para clarear/escurecer; reduza scale(1.015)
+para diminuir a animação e 1.2s para mudar a duração.
+CUIDADOS: não use display:none, visibility:hidden ou opacity:0 no estado normal.
+.is-image-missing é adicionada pelo JS somente quando o arquivo falha.
+DEPENDÊNCIAS: .hero-background-image no HTML, JS_IMAGENS_INSTITUCIONAIS e
+regras responsivas de 64rem e prefers-reduced-motion.
+============================================================
+*/
+.hero .hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(25, 8, 127, 0.82) 0%,
+    rgba(25, 8, 127, 0.52) 38%,
+    rgba(25, 8, 127, 0.16) 58%,
+    rgba(25, 8, 127, 0) 72%
+  );
+}
+
+.hero-background-picture,
+.hero-background-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-background-image {
+  object-fit: cover;
+  object-position: 68% top;
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
+  visibility: visible;
+  transform: scale(1.015);
+  transition: transform 1.2s ease;
+}
+
+.hero-background-image.is-image-loaded {
+  transform: scale(1);
+}
+
+.hero-background-image.is-image-missing {
+  display: none;
+}
+
+/*
+============================================================
+HERO MOBILE — ORDEM VERTICAL
+============================================================
+
+O QUE FAZ:
+Controla a ordem dos textos e da fotografia no celular.
+
+COMO ALTERAR:
+Use order, grid-template-columns ou flex-direction.
+
+CUIDADO:
+Não criar duas colunas em telas estreitas.
+============================================================
+*/
+.hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 3.5rem;
+}
+
+.hero-copy {
+  max-width: 42rem;
+}
+
+/*
+============================================================
+CSS_HERO_TEXTO — SELETORES: .eyebrow, h1, .hero-role, .hero-slogan e .hero-text
+============================================================
+O QUE É: hierarquia tipográfica do conteúdo principal.
+ONDE APARECE: hero e títulos introdutórios de outras seções.
+O QUE CONTROLA: font-size define escala; max-width limita linhas; margin cria
+distâncias; letter-spacing dá personalidade; borda lateral destaca a função.
+COMO ALTERAR: ajuste clamp() para tamanhos mínimo, fluido e máximo; modifique
+margin-bottom para aproximar textos e max-width para alterar quebras de linha.
+CUIDADOS: preserve contraste sobre a fotografia e mantenha somente um h1.
+DEPENDÊNCIAS: paleta de :root, overlay do hero e media query de 64rem.
+============================================================
+*/
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-violet);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.eyebrow span {
+  width: 1.8rem;
+  height: 0.12rem;
+  background: var(--color-orange);
+}
+
+.eyebrow-light {
+  color: var(--color-yellow);
+}
+
+.eyebrow b {
+  color: var(--color-orange);
+}
+
+.hero h1 {
+  max-width: 7ch;
+  margin-bottom: 1.4rem;
+  font-size: clamp(4rem, 19vw, 8.6rem);
+  font-weight: 300;
+  letter-spacing: -0.085em;
+}
+
+.hero h1 strong {
+  color: var(--color-orange);
+  font-weight: 800;
+}
+
+.hero-role {
+  max-width: 38rem;
+  margin-bottom: 1.6rem;
+  padding-left: 1rem;
+  border-left: 0.16rem solid var(--color-violet);
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(1rem, 3vw, 1.15rem);
+}
+
+.hero-slogan {
+  margin-bottom: 1.25rem;
+  font-size: clamp(1.45rem, 5vw, 2.15rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+
+.hero-text {
+  max-width: 36rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/*
+============================================================
+CSS_BUTTON_PRIMARY — SELETORES: .button, .button-primary e estados hover
+============================================================
+O QUE É: base dos botões e variação principal laranja da landing page.
+ONDE APARECE: CTA do hero; .button-light aparece na seção do Instagram.
+O QUE CONTROLA: display inline-flex alinha texto e seta; background e color
+definem cores; padding/min-height definem tamanho; border-radius arredonda;
+font-weight dá destaque; transition e transform controlam o hover.
+COMO ALTERAR: background muda o fundo, color muda o texto, padding aumenta o
+interior, border-radius reduz ou amplia o arredondamento, font-size pode ser
+adicionado para alterar o texto e translateY controla o movimento do hover.
+EXEMPLOS: border-radius: 1rem deixa menos arredondado; padding: 1rem 1.75rem
+deixa o botão maior.
+CUIDADOS: preserve contraste, :focus-visible e display inline-flex. Revise hover
+e foco após qualquer mudança de cor.
+DEPENDÊNCIAS: --color-orange, --color-white, --transition e :focus-visible.
+============================================================
+*/
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  min-height: 3.6rem;
+  padding: 0.9rem 1.35rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 800;
+  transition: color var(--transition), background var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.button-primary {
+  color: var(--color-white);
+  background: var(--color-orange);
+}
+
+.button:hover {
+  transform: translateY(-0.15rem);
+}
+
+.button-primary:hover {
+  color: var(--color-orange);
+  background: var(--color-white);
+}
+
+/*
+============================================================
+CSS_IMAGENS_INSTITUCIONAIS — CONTAINERS, OPACIDADE E FALLBACK
+============================================================
+O QUE É: padrão reutilizável para fotos de Quem é João, trajetória e galeria.
+ONDE APARECE: elementos com data-image-container e .institutional-image.
+O QUE CONTROLA: posicionamento absoluto, preenchimento com object-fit: cover,
+opacidades intencionais, ordem das camadas e ocultação em caso de erro.
+COMO ALTERAR: object-position ajusta o recorte; valores 0.08/0.14/0.72 mudam a
+força visual; use 1 para foto totalmente opaca. O placeholder desaparece quando
+o pai recebe .has-image.
+CUIDADOS: os pais precisam ter altura. .is-image-loaded, .is-image-missing e
+.has-image são controladas pelo main.js; não as renomeie isoladamente.
+DEPENDÊNCIAS: JS_IMAGENS_INSTITUCIONAIS e atributos do index.html.
+============================================================
+*/
+[data-image-container] {
+  position: relative;
+  isolation: isolate;
+}
+
+.institutional-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  visibility: visible;
+}
+
+.institutional-image[data-image-opacity="0.08"] { opacity: 0.08; }
+.institutional-image[data-image-opacity="0.14"] { opacity: 0.14; }
+.institutional-image[data-image-opacity="0.72"] { opacity: 0.72; }
+
+.institutional-image.is-image-missing {
+  display: none;
+}
+
+[data-image-container] > :not(.institutional-image):not(.hero-background-picture) {
+  position: relative;
+  z-index: 1;
+}
+
+[data-image-container].has-image [data-image-placeholder] {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/*
+============================================================
+CSS_HERO_DECORACAO — SELETORES: .hero-orbit e .hero-footer
+============================================================
+O QUE É: círculos abstratos e faixa de palavras no rodapé do hero.
+ONDE APARECE: primeira tela, acima da fotografia e abaixo do conteúdo principal.
+O QUE CONTROLA: posição, tamanho, transparência, espaçamento e alinhamento.
+COMO ALTERAR: top/left movem órbitas; width muda o diâmetro; gap altera a
+distância no rodapé; color controla a intensidade dos textos.
+CUIDADOS: mantenha z-index inferior ao conteúdo e não bloqueie interações.
+DEPENDÊNCIAS: .hero, .hero-grid e regra desktop do .hero-footer.
+============================================================
+*/
+.hero-orbit {
+  position: absolute;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 50%;
+}
+
+.hero-orbit-one {
+  top: 12%;
+  left: -18rem;
+  width: 33rem;
+  aspect-ratio: 1;
+}
+
+.hero-orbit-two {
+  top: 14%;
+  left: -12rem;
+  width: 21rem;
+  aspect-ratio: 1;
+}
+
+.hero-footer {
+  position: absolute;
+  inset: auto 1rem 1.6rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-footer i {
+  width: 1.5rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/*
+============================================================
+CSS_TITULOS_SECOES — SELETORES: .section-heading e .section-heading-row
+============================================================
+O QUE É: padrão dos títulos e textos de abertura das seções.
+ONDE APARECE: Quem é João, Trajetória, Pilares e Galeria.
+O QUE CONTROLA: margens, largura máxima, cor, escala tipográfica e alinhamento.
+COMO ALTERAR: margin-bottom ajusta a distância até o conteúdo; max-width muda
+a quebra; clamp() altera o tamanho do título. No desktop, row usa flex.
+CUIDADOS: revise títulos longos e o comportamento mobile ao mudar max-width.
+DEPENDÊNCIAS: .section-heading-row nas media queries e cores de :root.
+============================================================
+*/
+.section-heading {
+  margin-bottom: 3rem;
+}
+
+.section-heading h2 {
+  max-width: 16ch;
+  margin-bottom: 0;
+  color: var(--color-blue);
+  font-size: clamp(2.5rem, 9vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.065em;
+}
+
+/*
+============================================================
+CSS_QUEM_E_JOAO — SELETORES: .about, .about-lead, .about-columns e .about-note
+============================================================
+O QUE É: apresentação institucional e bloco de destaque dos mandatos.
+ONDE APARECE: seção #quem-e-joao.
+O QUE CONTROLA: fundo, linha decorativa, tamanho do texto principal, colunas,
+espaçamentos, cores e borda do destaque.
+COMO ALTERAR: gap modifica a distância entre colunas; font-size muda o texto;
+padding amplia o destaque; a opacidade da foto é definida no bloco de imagens
+por data-image-opacity="0.08".
+CUIDADOS: .about-grid ganha duas colunas apenas no desktop; revise essa media
+query antes de mudar a estrutura.
+DEPENDÊNCIAS: CSS_IMAGENS_INSTITUCIONAIS e media queries de 42rem/64rem.
+============================================================
+*/
+.about {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: calc(100svh - var(--header-height));
+  padding-block: clamp(2rem, 4vh, 3.5rem);
+  box-sizing: border-box;
+  background: var(--color-white);
+}
+
+.about-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 6rem);
+}
+
+.about-video-wrapper {
+  width: 100%;
+  max-width: 25rem;
+  margin-inline: auto;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  background: var(--color-blue);
+  border-radius: var(--radius-large);
+  box-shadow: 0 1.5rem 3.5rem rgba(25, 8, 127, 0.16);
+}
+
+.about-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+
+.about h2 {
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+  line-height: 0.98;
+}
+
+.about-summary {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 39rem;
+  margin-top: clamp(1.25rem, 2.5vh, 2rem);
+}
+
+.about-summary p {
+  margin: 0;
+  color: var(--color-neutral-500);
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  line-height: 1.5;
+}
+
+.about-lead {
+  margin-bottom: 2rem;
+  color: var(--color-blue);
+  font-size: clamp(1.35rem, 4.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.35;
+}
+
+.about-columns {
+  display: grid;
+  gap: 1rem;
+  color: var(--color-neutral-500);
+}
+
+.about-columns p {
+  margin-bottom: 0;
+}
+
+.about-note {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2.5rem;
+  padding: 1.25rem;
+  background: var(--color-neutral-100);
+  border-left: 0.25rem solid var(--color-orange);
+  border-radius: 0 var(--radius-medium) var(--radius-medium) 0;
+}
+
+.about-note-number {
+  color: var(--color-violet);
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: -0.08em;
+}
+
+.about-note p {
+  margin: 0;
+  color: var(--color-blue);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/*
+============================================================
+CSS_TRAJETORIA — SELETORES: .journey, .timeline, .timeline-item e .timeline-number
+============================================================
+O QUE É: linha do tempo sem datas da trajetória de João Felipe.
+ONDE APARECE: seção #trajetoria.
+O QUE CONTROLA: fundo, linha conectora, organização dos itens, marcadores,
+espaçamento e tipografia. No celular é vertical; no desktop usa cinco colunas.
+COMO ALTERAR: gap e padding-bottom mudam distâncias; width/height do número
+mudam o marcador; background do .timeline-number muda sua cor; grid-template-
+columns na media query controla a quantidade de colunas.
+CUIDADOS: mantenha a linha alinhada aos marcadores e preserve z-index dos textos
+sobre as fotos de baixa opacidade.
+DEPENDÊNCIAS: CSS_IMAGENS_INSTITUCIONAIS e media query de 64rem.
+============================================================
+*/
+.journey {
+  color: var(--color-white);
+  background: var(--color-blue);
+}
+
+.journey .section-heading h2 {
+  color: var(--color-white);
+}
+
+.section-heading-row > p {
+  max-width: 28rem;
+  margin: 1.5rem 0 0;
+  color: var(--color-neutral-500);
+}
+
+.journey .section-heading-row > p {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1.1rem;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.2rem 1fr;
+  gap: 1.2rem;
+  padding-bottom: 2.5rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-number {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  color: var(--color-blue);
+  background: var(--color-yellow);
+  border: 0.35rem solid var(--color-blue);
+  border-radius: 50%;
+  font-size: 0.55rem;
+  font-weight: 800;
+}
+
+.timeline-item h3 {
+  margin: 0.25rem 0 0.65rem;
+  font-size: clamp(1.35rem, 5vw, 1.85rem);
+  letter-spacing: -0.035em;
+}
+
+.timeline-item p {
+  max-width: 35rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.63);
+}
+
+/*
+============================================================
+CSS_PILARES — SELETORES: .pillars-grid, .pillar-card e variações
+============================================================
+O QUE É: grade dos quatro pilares narrativos.
+ONDE APARECE: seção #pilares.
+O QUE CONTROLA: quantidade de colunas, altura, padding, borda, arredondamento,
+cores, sombra e movimento no hover. .pillar-featured é laranja; .pillar-dark
+usa azul; os demais cards são claros.
+COMO ALTERAR: background muda o tipo de card; border ajusta contorno; padding
+muda o respiro; translateY reduz ou aumenta o hover; grid-template-columns nas
+media queries controla as colunas.
+CUIDADOS: revise contraste de título, índice e texto ao trocar fundos.
+DEPENDÊNCIAS: símbolos .pillar-symbol*, --shadow-soft e --transition.
+============================================================
+*/
+.pillars {
+  padding-top: var(--pillars-header-padding-top);
+  padding-bottom: var(--pillars-section-padding-bottom);
+  background: var(--color-neutral-50);
+}
+
+.pillars > .container {
+  max-width: var(--pillars-container-width);
+}
+
+.pillars .section-heading-row {
+  display: grid;
+  align-items: end;
+  gap: var(--pillars-header-gap);
+}
+
+.pillars-heading-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--pillars-symbols-text-gap);
+}
+
+.pillars-heading-side p {
+  max-width: 28rem;
+  margin: 0;
+  color: var(--color-neutral-500);
+}
+
+.pillars-symbols-preview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--pillars-icons-gap);
+  max-width: calc(
+    var(--pillars-icon-box-size) + var(--pillars-icon-box-size) +
+      var(--pillars-icons-gap)
+  );
+  transform: translateY(var(--pillars-icons-position-y));
+}
+
+.pillars .pillars-symbols-preview > .pillar-symbol {
+  position: relative;
+  top: auto;
+  right: auto;
+  width: var(--pillars-icon-box-size);
+  height: var(--pillars-icon-box-size);
+  flex: 0 0 var(--pillars-icon-box-size);
+  box-sizing: border-box;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--pillars-icon-radius);
+}
+
+.pillars-symbols-preview > .pillar-symbol:first-child {
+  align-items: flex-end;
+  justify-content: center;
+  height: var(--pillars-icon-box-size);
+  padding: calc(
+    (var(--pillars-icon-box-size) - var(--pillars-symbol-size)) / 2
+  );
+  background: var(--color-orange);
+}
+
+.pillars-symbols-preview > .pillar-symbol:first-child i {
+  width: 0.5rem;
+}
+
+.pillars-symbols-preview .pillar-symbol-circle {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background: var(--color-white);
+}
+
+.pillars-symbols-preview .pillar-symbol-circle::before {
+  content: "";
+  position: absolute;
+  width: var(--pillars-symbol-size);
+  height: var(--pillars-symbol-size);
+  border: 1px solid var(--color-violet);
+  border-radius: 50%;
+}
+
+.pillars-symbols-preview .pillar-symbol-circle i {
+  position: relative;
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+.pillars-symbols-preview .pillar-symbol-rise {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: var(--color-white);
+  transform: none;
+}
+
+.pillars-symbols-preview .pillar-symbol-rise i,
+.pillars-symbols-preview .pillar-symbol-rise i:nth-child(2),
+.pillars-symbols-preview .pillar-symbol-rise i:nth-child(3) {
+  width: var(--pillars-symbol-size);
+  height: 1px;
+  transform: rotate(-35deg);
+}
+
+.pillars-symbols-preview .pillar-symbol-rise i:nth-child(2) {
+  width: 1.6rem;
+}
+
+.pillars-symbols-preview .pillar-symbol-rise i:nth-child(3) {
+  width: 0.85rem;
+}
+
+.pillars-symbols-preview .pillar-symbol-west {
+  padding: 0;
+  overflow: hidden;
+  background: var(--color-blue);
+}
+
+.pillars-symbols-preview .pillar-symbol-west::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--pillars-symbol-size);
+  height: var(--pillars-symbol-size);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pillars-symbols-preview .pillar-symbol-west i:last-child {
+  width: var(--pillars-symbol-size);
+}
+
+.pillars-symbols-preview > :nth-child(1) {
+  color: #fff;
+  background: #ff6c01;
+}
+
+.pillars-symbols-preview > :nth-child(2) {
+  color: #19087f;
+  background: #fec438;
+}
+
+.pillars-symbols-preview > :nth-child(3) {
+  color: #fff;
+  background: #4215ff;
+}
+
+.pillars-symbols-preview > :nth-child(4) {
+  color: #fec438;
+  background: #19087f;
+}
+
+.pillars .pillars-symbols-preview > :nth-child(1) i,
+.pillars .pillars-symbols-preview > :nth-child(2) i,
+.pillars .pillars-symbols-preview > :nth-child(3) i,
+.pillars .pillars-symbols-preview > :nth-child(4) i {
+  background: currentColor;
+}
+
+.pillars .pillars-symbols-preview .pillar-symbol-circle::before,
+.pillars .pillars-symbols-preview .pillar-symbol-west::before {
+  border-color: currentColor;
+}
+
+.pillars-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.pillar-card {
+  position: relative;
+  min-height: 25rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-medium);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.pillar-card:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: var(--shadow-soft);
+}
+
+.pillar-index {
+  color: var(--color-violet);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.pillar-card h3 {
+  max-width: 11ch;
+  margin: 6.5rem 0 1rem;
+  color: var(--color-blue);
+  font-size: clamp(1.7rem, 6vw, 2.35rem);
+  letter-spacing: -0.045em;
+}
+
+.pillar-card p {
+  margin: 0;
+  color: var(--color-neutral-500);
+}
+
+.pillar-featured {
+  background: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.pillar-featured .pillar-index,
+.pillar-featured h3,
+.pillar-featured p {
+  color: var(--color-white);
+}
+
+.pillar-dark {
+  background: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+.pillar-dark .pillar-index {
+  color: var(--color-yellow);
+}
+
+.pillar-dark h3,
+.pillar-dark p {
+  color: var(--color-white);
+}
+
+.pillar-dark p {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.pillar-symbol {
+  position: absolute;
+  top: 1.35rem;
+  right: 1.35rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.3rem;
+  height: 4rem;
+}
+
+.pillar-symbol i {
+  display: block;
+  width: 0.65rem;
+  background: var(--color-yellow);
+}
+
+.pillar-symbol i:nth-child(1) { height: 35%; }
+.pillar-symbol i:nth-child(2) { height: 65%; }
+.pillar-symbol i:nth-child(3) { height: 100%; }
+
+.pillar-symbol-circle {
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  border: 1px solid var(--color-violet);
+  border-radius: 50%;
+}
+
+.pillar-symbol-circle i {
+  width: 1.1rem;
+  height: 1.1rem;
+  background: var(--color-orange);
+  border-radius: 50%;
+}
+
+.pillar-symbol-rise {
+  align-items: center;
+  transform: rotate(-35deg);
+}
+
+.pillar-symbol-rise i {
+  width: 3rem;
+  height: 1px;
+  background: var(--color-violet);
+}
+
+.pillar-symbol-rise i:nth-child(2) { width: 2rem; height: 1px; }
+.pillar-symbol-rise i:nth-child(3) { width: 1rem; height: 1px; }
+
+.pillar-symbol-west {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 50%;
+}
+
+.pillar-symbol-west i {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--color-yellow);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pillar-symbol-west i:last-child {
+  width: 5.5rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.32);
+  transform: translate(-50%, -50%) rotate(-35deg);
+}
+
+.pillars-grid > .pillar-card:nth-child(1) {
+  background: #ff6c01;
+  border-color: #ff6c01;
+}
+
+.pillars-grid > .pillar-card:nth-child(1) .pillar-symbol i {
+  background: #fff;
+}
+
+.pillars-grid > .pillar-card:nth-child(2) {
+  background: #fec438;
+  border-color: #fec438;
+}
+
+.pillars-grid > .pillar-card:nth-child(2) .pillar-index,
+.pillars-grid > .pillar-card:nth-child(2) h3,
+.pillars-grid > .pillar-card:nth-child(2) p {
+  color: #19087f;
+}
+
+.pillars-grid > .pillar-card:nth-child(2) p {
+  color: rgba(25, 8, 127, 0.76);
+}
+
+.pillars-grid > .pillar-card:nth-child(2) .pillar-symbol-circle {
+  border-color: #19087f;
+}
+
+.pillars-grid > .pillar-card:nth-child(2) .pillar-symbol-circle i {
+  background: #19087f;
+}
+
+.pillars-grid > .pillar-card:nth-child(3) {
+  background: #4215ff;
+  border-color: #4215ff;
+}
+
+.pillars-grid > .pillar-card:nth-child(3) .pillar-index,
+.pillars-grid > .pillar-card:nth-child(3) h3 {
+  color: #fff;
+}
+
+.pillars-grid > .pillar-card:nth-child(3) p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.pillars-grid > .pillar-card:nth-child(3) .pillar-symbol-rise i {
+  background: #fff;
+}
+
+.pillars-grid > .pillar-card:nth-child(4) {
+  background: #19087f;
+  border-color: #19087f;
+}
+
+.pillars-grid > .pillar-card:nth-child(4) .pillar-symbol-west {
+  border-color: #fec438;
+}
+
+.pillars-grid > .pillar-card:nth-child(4) .pillar-symbol-west i,
+.pillars-grid > .pillar-card:nth-child(4) .pillar-symbol-west i:last-child {
+  background: #fec438;
+}
+
+/*
+============================================================
+CSS_GALERIA — SELETORES: .gallery-grid, .gallery-item e variações
+============================================================
+O QUE É: grade de fotografias e placeholders institucionais.
+ONDE APARECE: seção #galeria.
+O QUE CONTROLA: colunas, altura mínima, proporções, recorte, textos, formas
+decorativas e cores de fallback. .gallery-item-tall é alto e .gallery-wide
+ocupa duas colunas nos breakpoints maiores.
+COMO ALTERAR: min-height muda a altura; gap muda distâncias; grid-template-
+columns altera colunas; classes orange/violet/sand/blue/wide/sunset controlam
+fundos. object-position das fotos pode ser adicionado à imagem específica.
+CUIDADOS: mantenha overflow: hidden e z-index dos textos. A opacidade padrão das
+fotos da galeria é 0.72 e o placeholder some quando o pai recebe .has-image.
+DEPENDÊNCIAS: CSS_IMAGENS_INSTITUCIONAIS, JS_IMAGENS_INSTITUCIONAIS e media queries.
+============================================================
+*/
+.gallery {
+  padding-top: var(--gallery-section-padding-top);
+  background: var(--color-blue);
+}
+
+#galeria,
+#galeria > .container {
+  background-color: var(--color-blue);
+}
+
+.gallery .section-heading h2 {
+  color: var(--color-white);
+}
+
+.gallery .eyebrow {
+  color: var(--color-yellow);
+}
+
+.gallery .section-heading-row > p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.gallery-grid {
+  display: grid;
+  gap: var(--gallery-layout-gap);
+}
+
+.gallery-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 16rem;
+  padding: 1.25rem;
+  overflow: hidden;
+  color: var(--color-white);
+  background: var(--color-violet);
+  border-radius: var(--radius-small);
+}
+
+.gallery-item-tall {
+  position: relative;
+  isolation: isolate;
+  padding: 0;
+  overflow: hidden;
+  background: #19087f;
+}
+
+.gallery .gallery-item-tall {
+  background: #19087f;
+}
+
+.gallery-item-tall > .gallery-main-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0.72;
+  filter: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+.gallery-item-tall::before,
+.gallery-item-tall::after {
+  z-index: 1;
+  display: block;
+  pointer-events: none;
+}
+
+.gallery-item-tall > .gallery-main-cutout,
+.gallery .gallery-item-tall[data-image-container] > .gallery-main-cutout {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.gallery-item::before,
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+}
+
+.gallery-item::before {
+  top: -3rem;
+  right: -3rem;
+  width: 10rem;
+  height: 10rem;
+}
+
+.gallery-item::after {
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.gallery-item:not(.gallery-item-tall)::before,
+.gallery-item:not(.gallery-item-tall)::after {
+  display: none;
+}
+
+.gallery-item span,
+.gallery-item p,
+.gallery-item small {
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-item span {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.gallery-item p {
+  margin-bottom: 0.2rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.gallery-item small {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.63rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gallery .gallery-item:not(.gallery-item-tall) > .institutional-image {
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
+}
+
+.gallery-instagram-feed {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 0.5rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-small);
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.12);
+}
+
+.gallery .gallery-wide {
+  height: 100%;
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.16);
+}
+
+.gallery-orange {
+  background: linear-gradient(145deg, var(--color-orange), var(--color-violet));
+}
+
+.gallery-violet {
+  background: linear-gradient(145deg, var(--color-violet), var(--color-blue));
+}
+
+.gallery-sand {
+  color: var(--color-blue);
+  background: var(--color-neutral-100);
+}
+
+.gallery-sand small {
+  color: var(--color-neutral-500);
+}
+
+.gallery-sand::before,
+.gallery-sand::after {
+  border-color: rgba(25, 8, 127, 0.18);
+}
+
+.gallery-sand::after {
+  background: var(--color-yellow);
+}
+
+.gallery-blue {
+  background: var(--color-blue);
+}
+
+.gallery-wide {
+  padding: 0;
+  overflow: hidden;
+  background: #19087f;
+}
+
+.people-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: #19087f;
+  border-radius: inherit;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery .gallery-wide[data-image-container] > .people-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+.people-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.people-slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #19087f;
+}
+
+.people-slider-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 0 0 100%;
+  overflow: hidden;
+  background: #19087f;
+  scroll-snap-align: start;
+}
+
+.people-slider-background {
+  position: absolute;
+  inset: -5%;
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(18px);
+  opacity: 0.55;
+  transform: scale(1.08);
+  pointer-events: none;
+  user-select: none;
+}
+
+.people-slider-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.gallery .gallery-wide::before,
+.gallery .gallery-wide::after {
+  display: none;
+}
+
+.gallery-sunset {
+  color: var(--color-white);
+  background: linear-gradient(160deg, var(--color-orange), var(--color-violet));
+}
+
+.gallery-sunset small {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/*
+============================================================
+CSS_INSTAGRAM — SELETORES: .instagram-section, .instagram-ring e conteúdo
+============================================================
+O QUE É: chamada visual final para o perfil oficial do Instagram.
+ONDE APARECE: antes do rodapé.
+O QUE CONTROLA: fundo violeta, textura, círculo laranja, título, descrição,
+identificador e botão claro.
+COMO ALTERAR: padding-block muda a altura; width/border da ring mudam o círculo;
+clamp() altera o título; cores do .button-light controlam o CTA.
+CUIDADOS: atualmente esta área é estática. Não existem cards, skeletons, estados
+de feed ou integração com API no CSS/JS atual; credenciais nunca devem ir ao frontend.
+DEPENDÊNCIAS: .button-light, paleta de :root e media query de 64rem.
+============================================================
+*/
+.instagram-section {
+  position: relative;
+  padding-block: var(--section-space);
+  overflow: hidden;
+  color: var(--color-blue);
+  background: var(--color-white);
+}
+
+.instagram-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background: repeating-linear-gradient(100deg, transparent 0, transparent 5rem, rgba(25, 8, 127, 0.12) 5rem, rgba(25, 8, 127, 0.12) calc(5rem + 1px));
+}
+
+.instagram-ring {
+  position: absolute;
+  top: 50%;
+  right: -10rem;
+  width: 23rem;
+  aspect-ratio: 1;
+  border: 4rem solid var(--color-orange);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  opacity: 0.9;
+}
+
+.instagram-content {
+  position: relative;
+  z-index: 1;
+}
+
+.instagram-content h2 {
+  max-width: 15ch;
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.75rem, 10vw, 6.5rem);
+  letter-spacing: -0.07em;
+}
+
+.instagram-section .eyebrow-light {
+  color: var(--color-orange);
+}
+
+.instagram-content > p:not(.eyebrow) {
+  max-width: 34rem;
+  color: var(--color-neutral-500);
+}
+
+.instagram-handle {
+  display: block;
+  width: fit-content;
+  margin: 2rem 0 1.25rem;
+  color: var(--color-orange);
+  font-weight: 800;
+}
+
+.button-light {
+  color: var(--color-white);
+  background: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.button-light:hover {
+  color: var(--color-orange);
+  background: var(--color-white);
+  border-color: var(--color-orange);
+}
+
+/*
+============================================================
+CSS_RODAPE — SELETORES: .site-footer, .footer-top e .footer-bottom
+============================================================
+O QUE É: encerramento institucional e navegação legal.
+ONDE APARECE: final da landing page.
+O QUE CONTROLA: fundo, cores, padding, borda divisória, grades, alinhamento,
+tamanhos de texto e distribuição dos links.
+COMO ALTERAR: padding muda o respiro; gap altera distâncias; grid-template-
+columns na media query organiza assinatura, slogan e Instagram no desktop.
+CUIDADOS: preserve contraste e mantenha os links legais acessíveis no mobile.
+DEPENDÊNCIAS: .footer-signature compartilha regra com .signature e breakpoint 42rem.
+============================================================
+*/
+.site-footer {
+  padding: 3rem 0 1.5rem;
+  color: var(--color-white);
+  background: var(--color-blue);
+}
+
+.footer-top {
+  display: grid;
+  gap: 1.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.footer-slogan {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.footer-top a {
+  width: fit-content;
+  color: var(--color-yellow);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.7rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+}
+
+.footer-bottom a:hover,
+.footer-top a:hover,
+.instagram-handle:hover {
+  color: var(--color-orange);
+}
+
+/*
+============================================================
+CSS_ANIMACOES — SELETORES: .reveal e .is-visible
+============================================================
+O QUE É: entrada suave dos elementos conforme chegam à viewport.
+ONDE APARECE: elementos do HTML com a classe .reveal.
+O QUE CONTROLA: opacity inicia invisível; translateY desloca 1.5rem; transition
+define duração de 650ms; .is-visible restaura opacidade e posição.
+COMO ALTERAR: reduza 1.5rem para menos deslocamento ou 650ms para mais rapidez.
+CUIDADOS: .is-visible é adicionada pelo IntersectionObserver no main.js. Não
+remova o fallback de prefers-reduced-motion.
+DEPENDÊNCIAS: JS_ANIMACOES_ENTRADA e media query de redução de movimento.
+============================================================
+*/
+.reveal {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 650ms ease, transform 650ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*
+============================================================
+CSS_RESPONSIVIDADE_42REM
+FINALIDADE: adaptar a composição para tablets e telas intermediárias a partir
+de 42rem, ampliando o container e distribuindo conteúdos em mais colunas.
+ONDE APARECE: hero, seção sobre, pilares, galeria e rodapé.
+O QUE CONTROLA: largura do container, espaçamento superior do hero, colunas dos
+grids, altura dos itens da galeria e organização horizontal do rodapé.
+COMO ALTERAR: ajuste o breakpoint ou as quantidades de colunas neste bloco.
+CUIDADOS: mudanças afetam simultaneamente várias seções e devem ser conferidas
+em larguras próximas de 42rem.
+DEPENDÊNCIAS: grids e componentes definidos anteriormente neste arquivo.
+============================================================
+*/
+@media (min-width: 42rem) {
+  .container {
+    width: min(calc(100% - 4rem), var(--max-width));
+  }
+
+  .hero {
+    padding-top: calc(var(--header-height) + 4rem);
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 42rem);
+    align-items: center;
+  }
+
+  .about-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item-tall {
+    grid-row: span 2;
+    min-height: 32.75rem;
+  }
+
+  .gallery-wide {
+    grid-column: span 2;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1.4fr auto;
+    align-items: center;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/*
+============================================================
+CSS_RESPONSIVIDADE_64REM
+FINALIDADE: aplicar o layout de desktop a partir de 64rem.
+ONDE APARECE: cabeçalho, navegação, hero, seção sobre, trajetória, pilares,
+galeria e decoração da seção do Instagram.
+O QUE CONTROLA: altura do cabeçalho, exibição do menu horizontal, colunas e
+alinhamentos dos grids, dimensões e posições específicas para telas grandes.
+COMO ALTERAR: ajuste o breakpoint ou as regras internas do componente desejado.
+CUIDADOS: 64rem também é usado pelo JavaScript para fechar o menu móvel ao
+entrar no desktop; mantenha os dois arquivos sincronizados se mudar esse valor.
+DEPENDÊNCIAS: JS_SELETORES_GERAIS, JS_MENU_MOBILE e estilos-base dos componentes.
+============================================================
+*/
+@media (min-width: 64rem) {
+  :root {
+    --header-height: 2.5rem;
+    --header-logo-size: 1.25rem;
+    --header-link-size: 0.78rem;
+    --header-instagram-size: 0.78rem;
+    --header-horizontal-padding: 1.25rem;
+  }
+
+  body.menu-open {
+    overflow: auto;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-navigation {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    padding: 0;
+    background: transparent;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+
+  .navigation-list {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: auto;
+    margin: 0;
+  }
+
+  .navigation-list a {
+    position: relative;
+    padding: 0.4rem 0;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: var(--header-link-size);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .navigation-list a::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 1px;
+    background: var(--color-orange);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition);
+  }
+
+  .navigation-list a:hover {
+    color: var(--color-white);
+  }
+
+  .navigation-list a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .hero {
+    display: flex;
+    align-items: center;
+    min-height: calc(100svh - var(--header-height));
+    margin-top: var(--header-height);
+    padding-block: clamp(2rem, 5vh, 3.5rem) clamp(3.75rem, 6vh, 4.5rem);
+  }
+
+  /*
+  ============================================================
+  HERO — POSIÇÃO DO TEXTO E DA FOTOGRAFIA
+  ============================================================
+
+  O QUE FAZ:
+  Controla as duas colunas principais do hero.
+
+  LADO ESQUERDO:
+  Textos, slogan e botão.
+
+  LADO DIREITO:
+  Fotografia de João Felipe.
+
+  COMO ALTERAR:
+  - grid-template-columns controla a largura das colunas;
+  - gap controla a distância entre texto e fotografia;
+  - order ou grid-area controla a ordem visual;
+  - object-position controla o enquadramento da fotografia.
+
+  CUIDADO:
+  Alterações aqui afetam somente o hero no desktop.
+  Revise também a media query do celular.
+  ============================================================
+  */
+  .hero-grid {
+    display: grid;
+    align-items: center;
+    grid-template-columns: minmax(0, 42fr) minmax(0, 58fr);
+    column-gap: clamp(2rem, 4vw, 5rem);
+  }
+
+  .hero-copy {
+    grid-column: 1;
+    max-width: none;
+  }
+
+  .hero-background {
+    inset: 0 0 0 42%;
+    width: auto;
+  }
+
+  .hero h1 {
+    margin-bottom: 1.1rem;
+  }
+
+  .hero-background-image {
+    object-position: 68% center;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      rgba(25, 8, 127, 0.96) 0%,
+      rgba(25, 8, 127, 0.9) 38%,
+      rgba(25, 8, 127, 0.55) 48%,
+      rgba(25, 8, 127, 0) 65%
+    );
+  }
+
+  .hero-background::after {
+    background: none;
+  }
+
+  .hero-footer {
+    left: 50%;
+    width: min(calc(100% - 4rem), var(--max-width));
+    justify-content: flex-start;
+    transform: translateX(-50%);
+  }
+
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 42%);
+    align-items: center;
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+
+  .about-text.reveal {
+    transform: translateY(calc(var(--about-text-position-y) + 1.5rem));
+  }
+
+  .about-text.reveal.is-visible {
+    transform: translateY(var(--about-text-position-y));
+  }
+
+  .about-video-wrapper {
+    width: auto;
+    height: var(--about-video-height);
+    max-height: calc(100svh - var(--header-height) - 4rem);
+    margin-inline: 0;
+    justify-self: center;
+  }
+
+  .section-heading {
+    margin-bottom: 4.5rem;
+  }
+
+  .about .section-heading {
+    margin-bottom: 0;
+  }
+
+  .section-heading-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .section-heading-row > p {
+    margin-bottom: 0.5rem;
+  }
+
+  .journey {
+    min-height: 0;
+    box-sizing: border-box;
+    padding-top: var(--journey-padding-top);
+    padding-bottom: var(--journey-bottom-space);
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .journey > .container {
+    width: min(calc(100% - 4rem), var(--max-width));
+    margin-inline: auto;
+    display: grid;
+    grid-template-rows: auto auto;
+    align-content: start;
+    gap: 0;
+  }
+
+  .journey .section-heading-row {
+    display: block;
+    margin: 0;
+  }
+
+  .journey .section-heading-row > div {
+    max-width: 62rem;
+  }
+
+  .journey h2 {
+    margin-bottom: 0;
+    font-size: var(--journey-title-size);
+    line-height: 0.95;
+    white-space: nowrap;
+  }
+
+  .journey .journey-intro {
+    max-width: 62rem;
+    margin-top: var(--journey-title-intro-gap);
+    margin-bottom: var(--journey-intro-timeline-gap);
+    font-size: calc(var(--journey-intro-size) + var(--journey-intro-extra-size));
+    line-height: 1.55;
+  }
+
+  .journey-intro p {
+    margin: 0;
+  }
+
+  .journey-intro p + p {
+    margin-top: 0.55rem;
+  }
+
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+    margin-top: 0;
+  }
+
+  .timeline::before {
+    top: 1.1rem;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    width: auto;
+    height: 1px;
+  }
+
+  .timeline-item {
+    display: block;
+    padding: 0;
+  }
+
+  .timeline-number {
+    margin-bottom: 1.75rem;
+  }
+
+  .timeline-item h3 {
+    min-height: 3.7rem;
+    font-size: var(--journey-card-title-size);
+    line-height: 1.05;
+  }
+
+  .timeline-item p {
+    font-size: var(--journey-card-text-size);
+    line-height: 1.4;
+  }
+
+  .pillars .section-heading-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .pillars > .container {
+    width: min(calc(100% - 4rem), var(--pillars-container-width));
+  }
+
+  .pillars-symbols-preview {
+    flex-wrap: nowrap;
+    max-width: none;
+  }
+
+  .pillars-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--pillars-cards-gap);
+  }
+
+  .pillar-card {
+    min-height: 30rem;
+    min-width: 0;
+    padding-inline: var(--pillar-card-padding-x);
+    box-sizing: border-box;
+  }
+
+  .pillar-card h3 {
+    overflow-wrap: break-word;
+  }
+
+  .pillar-card h3 {
+    margin-top: 8.5rem;
+  }
+
+  /* GALERIA_LAYOUT_DESKTOP */
+  .gallery-grid {
+    grid-template-columns: 1.25fr 0.75fr 1fr;
+    grid-template-rows: 16rem 16rem var(--gallery-feature-row-height);
+    gap: var(--gallery-layout-gap);
+  }
+
+  .gallery-item-tall {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    min-height: 0;
+  }
+
+  .gallery-wide {
+    grid-column: 2 / span 2;
+    grid-row: 3;
+  }
+
+  .gallery-blue {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .gallery-sunset {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .gallery-instagram-feed {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .instagram-ring {
+    right: 6%;
+    width: 34rem;
+    border-width: 6rem;
+  }
+}
+
+@media (min-width: 64rem) and (max-height: 800px) {
+  .journey {
+    --journey-padding-top: 2rem;
+    --journey-padding-bottom: 0.75rem;
+    --journey-heading-gap: clamp(1.5rem, 4vh, 2rem);
+  }
+
+  .journey h2 {
+    margin-bottom: 0;
+  }
+
+  .journey .journey-intro p + p {
+    margin-top: 0.4rem;
+  }
+
+  .journey .timeline-number {
+    margin-bottom: 1.25rem;
+  }
+
+  .journey .timeline-item h3 {
+    min-height: 3.2rem;
+    margin-bottom: 0.5rem;
+    font-size: var(--journey-card-title-size);
+    line-height: 1.05;
+  }
+
+  .journey .timeline-item p {
+    font-size: var(--journey-card-text-size);
+    line-height: 1.4;
+  }
+
+  .about {
+    padding-block: clamp(1.25rem, 3vh, 2rem);
+  }
+
+  .about-grid {
+    gap: clamp(1.5rem, 4vw, 4rem);
+  }
+
+  .about h2 {
+    font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+  }
+
+  .about-summary {
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .about-video-wrapper {
+    max-height: calc(100svh - var(--header-height) - 3rem);
+  }
+
+  .hero {
+    padding-block: clamp(0.75rem, 2vh, 1.25rem) clamp(2.25rem, 5vh, 2.75rem);
+  }
+
+  .hero-grid {
+    gap: 1.5rem;
+  }
+
+  .hero h1 {
+    margin-bottom: 0.35rem;
+    font-size: clamp(4.25rem, 8vw, 5.75rem);
+  }
+
+  .hero-role {
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-slogan {
+    margin-bottom: 0.4rem;
+  }
+
+  .hero-text {
+    margin-bottom: 0.65rem;
+  }
+
+  .button-primary {
+    min-height: 3.2rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .hero-footer {
+    bottom: 0.35rem;
+  }
+}
+
+/*
+============================================================
+CSS_RESPONSIVIDADE_REDUCAO_MOVIMENTO
+FINALIDADE: respeitar a preferência de acessibilidade por menos movimento.
+ONDE APARECE: em toda a página quando o sistema operacional informa
+prefers-reduced-motion: reduce.
+O QUE CONTROLA: rolagem suave, duração e repetição de transições/animações,
+entrada dos elementos .reveal e transformação visual do hero.
+COMO ALTERAR: mantenha uma apresentação estática e imediatamente legível.
+CUIDADOS: não remova este fallback; ele evita movimento indesejado e também
+garante conteúdo visível sem aguardar animações.
+DEPENDÊNCIAS: CSS_ANIMACOES e JS_ANIMACOES_ENTRADA.
+============================================================
+*/
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-background-image {
+    opacity: 1;
+    transform: none;
+  }
+
+  .people-slider {
+    scroll-behavior: auto;
+  }
+
+}
